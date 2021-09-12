@@ -4,25 +4,25 @@ import java.util.Scanner;
 
 public class BasicAndFunctional {
     public static void main(String[] args) {
-        /* that takes two integer command-line
-         * arguments x and y
-         */
+        double a,b,c;
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the integer for x");
-        int x = sc.nextInt();
-        System.out.println("Enter the integer for x");
-        int y = sc.nextInt();
-        calDistance(x, y);
-        sc.close();
+        System.out.println("Enter value a :");
+        a = sc.nextInt();
+        System.out.println("Enter value b :");
+        b = sc.nextInt();
+        System.out.println("Enter value c :");
+        c = sc.nextInt();
+        quadraticCal(a,b,c);
     }
-
-    private static void calDistance(int x, int y) {
-        /* prints the Euclidean distance from the point (x, y) to
-         * the origin (0, 0). The formulae to calculate
-         * distance = sqrt(x*x + y*y). Use Math.power function
-         */
-        double res = (Math.sqrt((Math.pow(x, 2)) + (Math.pow(y, 2))));
-        System.out.println("The Euclidean distance is: " + res);
+    public static void quadraticCal(double a, double b, double c){
+        // print the roots of quadratic equation
+        double delta = (b * b) - (4 * a * c);
+        if (delta > 0.0){
+            double r1 = (-b + Math.sqrt(delta)) / (2 * a);
+            double r2 = (-b - Math.sqrt(delta)) / (2 * a);
+            System.out.println("Root 1 is : " +r1);
+            System.out.println("Root 2 is : " +r2);
+        }
     }
 }
 
